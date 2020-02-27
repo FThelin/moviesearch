@@ -1,0 +1,16 @@
+body {
+    background-color: #78909c;
+}  
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(75, 75, 75) !important;
+    box-shadow: 0 1px 0 0 rgb(0, 0, 0) !important;
+  }
+
+/* label focus color */
+.input-field input[type=text] {
+    border-bottom: 1px solid rgb(129, 129, 129) !important;
+    box-shadow: 0 1px 0 0 rgb(80, 80, 80) !important;
+  }
+  
