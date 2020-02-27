@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './Nav'
 import SearchArea from './SearchArea'
+import MovieList from './MovieList'
 
 interface Props {
   
@@ -30,8 +31,7 @@ class App extends React.Component<Props, State> {
 
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`)
     .then(data => data.json())
-    .then(data => {
-      console.log(data)
+    .then(data => {      
       this.setState({ movies: [...data.results] })
     })
   }
@@ -45,6 +45,7 @@ class App extends React.Component<Props, State> {
       <div className="App">
         <Nav />
         <SearchArea handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
+        <MovieList movies={this.state.movies}/>
       </div>
     )
   }
